@@ -3503,7 +3503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantList: []
-  currentPlant: {fileID: 0}
+  informationPanel: {fileID: 1108980157}
+  information: {fileID: 1056485462}
 --- !u!4 &1780378801
 Transform:
   m_ObjectHideFlags: 0

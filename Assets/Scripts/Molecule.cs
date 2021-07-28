@@ -8,8 +8,22 @@ using UnityEngine;
 /// </summary>
 public class Molecule : MonoBehaviour
 {
+    #region VARIALBES
     public string _name; // The name of the molecule
     public string _class; // The class of the molecule
     [Multiline]
     public string _description; // The description of the molecule
+    #endregion //VARIABLES
+
+    #region PUBLIC_METHODS
+    public string getName() {
+        return _name;
+    }
+    public string getClass() {
+        return _class;
+    }
+    public string getDesc(){
+        return _description;
+    }
+    #endregion //PUBLIC_METHODS
 }
