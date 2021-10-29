@@ -28,12 +28,6 @@ public class Plant : MonoBehaviour
 
     #region UNITY_MONOBEHAVIOUR_MEDTHODS
     void Start() {
-        //Testing
-        setComName("Test Name");
-        setSciName("Test Scientific");
-        setFamily("Test Family");
-        setDesc("This is a quick example of a test description for a plant. <color=red>You</color> <size=15>could</size> also control the characteristics of the text with <b>'text rich'</b> formatting.");
-        
         transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = string.Format("<b>{0}</b>\n<i>{1}</i>\n{2}\n{3}", comName, sciName, family, description); // Set the text displayed on the button
         gameObject.name = string.Format("{0}_button",comName.Replace(" ", "")); // Set the name of the game object
         /// Ensure the second word in the scientific name of the plant is lowercase

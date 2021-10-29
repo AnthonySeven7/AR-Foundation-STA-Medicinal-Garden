@@ -1,5 +1,4 @@
-﻿ 
-Shader "DAB/Vertex Detail Specular"
+﻿Shader "DAB/Vertex Detail Specular"
 {
   Properties
   {
@@ -56,4 +55,3 @@ Shader "DAB/Vertex Detail Specular"
  
   Fallback "Specular"
 }
- 
