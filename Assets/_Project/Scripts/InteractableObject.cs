@@ -16,14 +16,14 @@ public class InteractableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!RendererCheck() && rendererOn) // If the mesh renderer was just turned off
-        {
-            // Reset rotation and scale
-            transform.rotation = Quaternion.identity;
-            transform.localScale = Vector3.one;
-            rendererOn = false;
-        }
-        else if (RendererCheck() && !rendererOn) rendererOn = true;
+        // if (!RendererCheck() && rendererOn) // If the mesh renderer was just turned off
+        // {
+        //     // Reset rotation and scale
+        //     transform.rotation = Quaternion.identity;
+        //     transform.localScale = Vector3.one;
+        //     rendererOn = false;
+        // }
+        // else if (RendererCheck() && !rendererOn) rendererOn = true;
 
         if(interactable && Input.touchCount > 0)
         {
@@ -33,9 +33,9 @@ public class InteractableObject : MonoBehaviour
                 switch (touch.phase)
                 {
                     case TouchPhase.Moved:
-                        //if (Vector3.Dot(transform.up, Vector3.up) >= 0) transform.Rotate(transform.up, -Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
-                        //else transform.Rotate(transform.up, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
-                        //transform.Rotate(Camera.main.transform.right, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.up), Space.World);
+                        if (Vector3.Dot(transform.up, Vector3.up) >= 0) transform.Rotate(transform.up, -Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
+                        else transform.Rotate(transform.up, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
+                        transform.Rotate(Camera.main.transform.right, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.up), Space.World);
                         break;
                     default: break;
                 }

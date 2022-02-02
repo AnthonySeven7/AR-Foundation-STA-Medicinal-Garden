@@ -6,7 +6,7 @@ using UnityEngine;
 /// A type for each molecule in the database
 /// Usage: Hold all of the information of the molecule
 /// </summary>
-public class Molecule : MonoBehaviour
+public class Molecule
 {
     #region VARIALBES
     public string _name; // The name of the molecule
@@ -15,7 +15,8 @@ public class Molecule : MonoBehaviour
     public string _description; // The description of the molecule
     #endregion //VARIABLES
 
-    #region PUBLIC_METHODS
+    /*#region PUBLIC_METHODS
+    #region GETTERS
     public string getName() {
         return _name;
     }
@@ -25,5 +26,19 @@ public class Molecule : MonoBehaviour
     public string getDesc(){
         return _description;
     }
-    #endregion //PUBLIC_METHODS
+    #endregion // GETTERS
+    #region SETTERS
+    public void setName(string x) {
+        _name = x;
+    }
+    public void setClass(string x)
+    {
+        _class = x;
+    }
+    public void setDesc(string x)
+    {
+        _description = x;
+    }
+    #endregion // SETTERS
+    #endregion //PUBLIC_METHODS*/
 }
