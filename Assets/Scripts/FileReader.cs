@@ -19,7 +19,6 @@ public class FileReader : MonoBehaviour
     [SerializeField]
     private GameObject buttonPreFab;
 
-    //make return type plantmatrix
     public List<List<string>> readFile()
     {
         List<List<string>> matrix = new List<List<string>>();
@@ -28,8 +27,6 @@ public class FileReader : MonoBehaviour
         string fileExt = string.Empty;
         fileExt = Path.GetExtension(filePath);
         #endif
-        //if (fileExt.CompareTo(".txt") == 0)
-        //{
             try
             {
                 string[] arr;
@@ -55,30 +52,11 @@ public class FileReader : MonoBehaviour
                         row++;
                     }
                 #endif
-        }
+            }
             catch (Exception ex)
             {
                 throw ex;
             }
-        //}
         return matrix;
-        /*
-        foreach (List<string> subList in matrix)
-        {
-
-            Debug.Log("PLANT: ");
-            foreach (string cell in subList)
-                Debug.Log("COLUMN 1: " + cell); //first iteration will be cell[0,0] followed by [0,1] etc...
-        }
-        
-        //option 2
-        for (int row = 0; row < matrix.Count; row++)
-        {
-            for (int column = 0; column < matrix[row].Count; column++)
-            {
-                Console.WriteLine(matrix[row][column]); //first iteration will be cell[0,0] followed by [0,1] etc...
-            }
-        }*/
-  
     }
 }

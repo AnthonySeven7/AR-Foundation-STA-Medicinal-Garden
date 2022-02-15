@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
+using TMPro;
 
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class ImageRecognition : MonoBehaviour
@@ -16,12 +17,12 @@ public class ImageRecognition : MonoBehaviour
     {
         trackedImageManager = FindObjectOfType<ARTrackedImageManager>();
         //Spawns each prefab in placeablePrefabs
-        foreach(GameObject prefab in placeablePrefabs)
-        {
-            GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-            newPrefab.name = prefab.name;
-            spawnedPrefabs.Add(prefab.name, newPrefab);
-        }
+        // foreach(GameObject prefab in placeablePrefabs)
+        // {
+        //     GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        //     newPrefab.name = prefab.name;
+        //     spawnedPrefabs.Add(prefab.name, newPrefab);
+        // }
     }
 
     private void OnEnable()
@@ -45,29 +46,38 @@ public class ImageRecognition : MonoBehaviour
         {
             UpdateImage(trackedImage);
         }
-        foreach (ARTrackedImage trackedImage in eventArgs.removed)
-        {
-            spawnedPrefabs[trackedImage.name].SetActive(false);
-        }
+        // foreach (ARTrackedImage trackedImage in eventArgs.removed)
+        // {
+        //     spawnedPrefabs[trackedImage.name].SetActive(false);
+        // }
     }
 
 
     private void UpdateImage(ARTrackedImage trackedImage)
     {
         //Match prefab image positions and visibility
-        string name = trackedImage.referenceImage.name;
-        Vector3 position = trackedImage.transform.position;
+        string trackedName = trackedImage.referenceImage.name;
+        string plantName = GameObject.Find("PlantManager").GetComponent<PlantManager>().getPlant().name;
+        //Vector3 position = trackedImage.transform.position;
 
-        GameObject prefab = spawnedPrefabs[name];
-        prefab.transform.position = position;
-        prefab.SetActive(true);
-
-        foreach(GameObject go in spawnedPrefabs.Values)
-        {
-            if(go.name != name)
-            {
-                go.SetActive(false);
-            }
+        //GameObject prefab = spawnedPrefabs[name];
+        //prefab.transform.position = position;
+        //prefab.SetActive(true);
+        GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = plantName.ToLower().Substring(0,plantName.Length-7) + "|" + trackedName.ToLower();
+        if (plantName.ToLower().Substring(0,plantName.Length-7) != trackedName.ToLower()) {
+            GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "\nfalse";
+            GameObject.Find("AR Session Origin/Trackables/DynamicTrackable").SetActive(false);
         }
+        else {
+            GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "\ntrue";
+            GameObject.Find("AR Session Origin/Trackables/DynamicTrackable").SetActive(true);
+        }
+        // foreach(GameObject go in spawnedPrefabs.Values)
+        // {
+        //     if(go.name != name)
+        //     {
+        //         go.SetActive(false);
+        //     }
+        // }
     }
 }

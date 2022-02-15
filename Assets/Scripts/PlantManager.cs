@@ -95,15 +95,6 @@ public class PlantManager : MonoBehaviour
             button.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             button.gameObject.name = string.Format("{0}_button", button.getComName().Replace(" ", ""));
             myPlants.Add(button);
-
-            /*
-            plant.setComName(matrix[plantNum][colComName]);
-            plant.setDesc(matrix[plantNum][colDescription]);
-            plant.setFamily(matrix[plantNum][colFamily]);
-            plant.setHardiness(matrix[plantNum][colHardiness]);
-            plant.setSciName(matrix[plantNum][colSciName]);
-            plant.setToxicity(matrix[plantNum][colToxicity]);
-            */
             plantNum++;
         }
     }
@@ -207,6 +198,13 @@ public class PlantManager : MonoBehaviour
         return currentMole;
     }
 
+    public void setMole(Molecule x) {
+        currentMole = x;
+    }
+
+    public void setDyn(DynamicMole x) {
+        dynMol = x;
+    }
     public void closeAR() {
         if (dynMol != null) dynMol.deleteTrackable();
     }
