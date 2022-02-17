@@ -25,7 +25,7 @@ public class InteractableObject : MonoBehaviour
         // }
         // else if (RendererCheck() && !rendererOn) rendererOn = true;
 
-        if(interactable && Input.touchCount > 0)
+        if(interactable && Input.touchCount > 0 && GameObject.Find("ARPanel").activeSelf)
         {
             if (Input.touchCount == 1)
             {
@@ -33,9 +33,9 @@ public class InteractableObject : MonoBehaviour
                 switch (touch.phase)
                 {
                     case TouchPhase.Moved:
-                        if (Vector3.Dot(transform.up, Vector3.up) >= 0) transform.Rotate(transform.up, -Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
-                        else transform.Rotate(transform.up, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
-                        transform.Rotate(Camera.main.transform.right, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.up), Space.World);
+                        if (Vector3.Dot(transform.up, Vector3.up) >= 0) transform.GetChild(0).Rotate(transform.GetChild(0).up, -Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
+                        else transform.GetChild(0).Rotate(transform.GetChild(0).up, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.right), Space.World);
+                        transform.GetChild(0).Rotate(Camera.main.transform.right, Vector3.Dot(touch.deltaPosition/10, Camera.main.transform.up), Space.World);
                         break;
                     default: break;
                 }
@@ -47,8 +47,8 @@ public class InteractableObject : MonoBehaviour
 
                 var zoom = Vector3.Distance(touch0.position, touch1.position) / Vector3.Distance(touch0.position - touch0.deltaPosition, touch1.position - touch1.deltaPosition);
                 if (zoom == 0 || zoom > 10) return;
-                var scaleChange = (transform.localScale + (Vector3.LerpUnclamped(new Vector3(touch0.position.magnitude, touch0.position.magnitude, touch0.position.magnitude), transform.localScale, 1 / zoom)) / 200);
-                if (scaleChange.x >= minScale && scaleChange.x <= maxScale) transform.localScale = scaleChange;
+                var scaleChange = (transform.GetChild(0).localScale + (Vector3.LerpUnclamped(new Vector3(touch0.position.magnitude, touch0.position.magnitude, touch0.position.magnitude), transform.GetChild(0).localScale, 1 / zoom)) / 200);
+                if (scaleChange.x >= minScale && scaleChange.x <= maxScale) transform.GetChild(0).localScale = scaleChange;
             }
         }
     }

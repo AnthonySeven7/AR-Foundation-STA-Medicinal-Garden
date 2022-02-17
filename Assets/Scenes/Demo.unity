@@ -3437,7 +3437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1610026908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3880,6 +3880,7 @@ MonoBehaviour:
   informationPanel: {fileID: 1108980157}
   information: {fileID: 1056485462}
   currentPlant: {fileID: 0}
+  dynMol: {fileID: 0}
 --- !u!4 &1780378801
 Transform:
   m_ObjectHideFlags: 0
@@ -3906,7 +3907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ef1077a63a3994899785b8351dfe5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileToBeOpened: {fileID: 4900000, guid: 08305fba0985e334bab2dfe9d9e30174, type: 3}
+  fileToBeOpened: {fileID: 4900000, guid: 5bd46c874e1b733478b92dc2f4086495, type: 3}
   buttonPreFab: {fileID: 7443133165936784158, guid: 16bb5cf14a45d5a429065639b010d38a,
     type: 3}
 --- !u!1 &1869631162

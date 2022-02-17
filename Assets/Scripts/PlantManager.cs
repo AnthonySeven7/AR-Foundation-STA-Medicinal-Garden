@@ -24,7 +24,7 @@ public class PlantManager : MonoBehaviour
     private Plant currentPlant; // The plant that is currently being focused on
     [SerializeField]
     private Molecule currentMole; // The molecule that is currently being tracked
-    private DynamicMole dynMol; // A reference to the dynamic trackable molecule handler
+    public DynamicMole dynMol; // A reference to the dynamic trackable molecule handler
     private List<GameObject> objToDelete = new List<GameObject>(); // A list of game objects to be deleted once the focus has changed
 
     #endregion //VARIABLES
@@ -184,7 +184,7 @@ public class PlantManager : MonoBehaviour
     }
 
     public void loseFocus() {
-        if (dynMol != null) dynMol.deleteTrackable();
+        //if (dynMol != null) dynMol.deleteTrackable();
         foreach(GameObject obj in objToDelete) {
             Destroy(obj);
         }
@@ -206,7 +206,12 @@ public class PlantManager : MonoBehaviour
         dynMol = x;
     }
     public void closeAR() {
-        if (dynMol != null) dynMol.deleteTrackable();
+        //if (dynMol != null) dynMol.deleteTrackable();
+    }
+
+    public void changePlant() {
+        currentMole = null;
+        currentPlant = null;
     }
 
     #endregion //PUBLIC_METHODS

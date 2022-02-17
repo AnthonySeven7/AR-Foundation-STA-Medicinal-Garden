@@ -65,12 +65,12 @@ public class ImageRecognition : MonoBehaviour
         //prefab.SetActive(true);
         GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = plantName.ToLower().Substring(0,plantName.Length-7) + "|" + trackedName.ToLower();
         if (plantName.ToLower().Substring(0,plantName.Length-7) != trackedName.ToLower()) {
-            GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "\nfalse";
-            GameObject.Find("AR Session Origin/Trackables/DynamicTrackable").SetActive(false);
+            //GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "\nfalse";
+            GameObject.Find("PlantManager").GetComponent<PlantManager>().dynMol.gameObject.SetActive(false);
         }
         else {
-            GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "\ntrue";
-            GameObject.Find("AR Session Origin/Trackables/DynamicTrackable").SetActive(true);
+            //GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "\ntrue";
+            GameObject.Find("PlantManager").GetComponent<PlantManager>().dynMol.gameObject.SetActive(true);
         }
         // foreach(GameObject go in spawnedPrefabs.Values)
         // {

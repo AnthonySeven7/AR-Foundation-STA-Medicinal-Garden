@@ -1,7 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+//using TMPro;
 
 /// <summary>
 /// A script that changes the mesh of the object attached to it. Mesh chosen based on currently selected molecule
@@ -14,28 +14,29 @@ public class DynamicMole : MonoBehaviour
     #endregion //VARIABLES
     // Update is called once per frame
     public void Start() {
-        GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "Start\n";
-        transform.GetComponentInChildren<TextMeshPro>().text = transform.name;
+        //GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "Start\n";
+        //transform.GetComponentInChildren<TextMeshPro>().text = transform.name;
         plantManager = GameObject.Find("PlantManager").GetComponent<PlantManager>();
-        if(plantManager.getMole() != null) {
-            GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += string.Format("--{0}\n",plantManager.getMole()._name);
-        }
-        else {
-            GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "NULL\n";
-        }
+        plantManager.dynMol = this;
+        // if(plantManager.getMole() != null) {
+        //     GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += string.Format("--{0}\n",plantManager.getMole()._name);
+        // }
+        // else {
+        //     GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "NULL\n";
+        // }
         createTrackable();
     }
 
     // Create a trackable molecule for the AR feature
     public void createTrackable() {
-        GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "CREATE_TRACKABLE\n";
+        //GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "CREATE_TRACKABLE\n";
         _flag = true;
         // Find the molecule in our folder of models
         //GameObject model;
         // Create a copy of this model and make it a child of this game object
         Molecule mole = plantManager.getMole();;
         Debug.Log(mole);
-        GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += string.Format("{0}\n",mole._name);
+        //GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += string.Format("{0}\n",mole._name);
 
         if (mole != null) {
             GameObject moleModel = null;

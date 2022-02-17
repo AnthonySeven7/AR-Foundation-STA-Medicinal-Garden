@@ -24,114 +24,44 @@ MonoBehaviour:
     m_Size: {x: 0.2, y: 0.16018519}
     m_SpecifySize: 1
     m_Name: Aloe
-    m_Texture: {fileID: 2800000, guid: bb2e27d2333f883409d070ef277345f0, type: 3}
+    m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5727690181702227838
       m_GuidHigh: 13738827008847595193
     m_SerializedTextureGuid:
-      m_GuidLow: 17168850874159618844
-      m_GuidHigh: 15713894627822033545
-    m_Size: {x: 0.2, y: 0.1375}
+      m_GuidLow: 6661959776715748284
+      m_GuidHigh: 13166363159008044040
+    m_Size: {x: 0.2, y: 0.1378965}
     m_SpecifySize: 1
     m_Name: Chocolate
-    m_Texture: {fileID: 2800000, guid: d3f05b1c02e7ee44895a4081e8f712da, type: 3}
+    m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5399193451577687530
       m_GuidHigh: 14769163327495011258
     m_SerializedTextureGuid:
-      m_GuidLow: 12516896950727379772
-      m_GuidHigh: 17635811311256898939
-    m_Size: {x: 0.2, y: 0.12801419}
+      m_GuidLow: 14516370058275671146
+      m_GuidHigh: 5082432556425197611
+    m_Size: {x: 0.2, y: 0.12966667}
     m_SpecifySize: 1
-    m_Name: AgaveAmericanaLF
-    m_Texture: {fileID: 2800000, guid: 96468b3cf375adb47b8d48f5f2fcbef4, type: 3}
+    m_Name: Pomegranate
+    m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5194060623921835585
       m_GuidHigh: 11009006229606025130
     m_SerializedTextureGuid:
-      m_GuidLow: 6243265576292924765
-      m_GuidHigh: 13300332411048561658
-    m_Size: {x: 0.2, y: 0.1302714}
+      m_GuidLow: 8616573647863319212
+      m_GuidHigh: 2958296382775600696
+    m_Size: {x: 0.2, y: 0.1249584}
     m_SpecifySize: 1
-    m_Name: CoffeeArabicaPF
-    m_Texture: {fileID: 2800000, guid: a15d3d5d88f656a4fa0b2a13dc4594b8, type: 3}
+    m_Name: Banana
+    m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4982753884506033810
       m_GuidHigh: 9066408319226283957
     m_SerializedTextureGuid:
-      m_GuidLow: 8454642466967343260
-      m_GuidHigh: 6488093699110038378
-    m_Size: {x: 0.2, y: 0.13419355}
+      m_GuidLow: 14516370058275671146
+      m_GuidHigh: 5082432556425197611
+    m_Size: {x: 0.2, y: 0.12966667}
     m_SpecifySize: 1
-    m_Name: EphedraMaHuangSignPF
-    m_Texture: {fileID: 2800000, guid: 7285509cec8775546a6be70cd8560a5a, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 4803002746197619973
-      m_GuidHigh: 14929476674113677237
-    m_SerializedTextureGuid:
-      m_GuidLow: 1757629120704731918
-      m_GuidHigh: 8786951633043402186
-    m_Size: {x: 0.2, y: 0.12870201}
-    m_SpecifySize: 1
-    m_Name: GumArabicTreepF
-    m_Texture: {fileID: 2800000, guid: 7a7cdb0e5a5f1864ca2d177af485f179, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 4925477123941700052
-      m_GuidHigh: 5529158910658983334
-    m_SerializedTextureGuid:
-      m_GuidLow: 11129767918529780374
-      m_GuidHigh: 18132869889504905163
-    m_Size: {x: 0.2, y: 0.107872695}
-    m_SpecifySize: 1
-    m_Name: IndianSnakerootSignF
-    m_Texture: {fileID: 2800000, guid: 30819a96e0f49a74cb0751aa17e5a4fb, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 5201177388086803821
-      m_GuidHigh: 6077384997347840178
-    m_SerializedTextureGuid:
-      m_GuidLow: 28394853390289764
-      m_GuidHigh: 5146658733106459817
-    m_Size: {x: 0.2, y: 0.13858268}
-    m_SpecifySize: 1
-    m_Name: PapayaSignF
-    m_Texture: {fileID: 2800000, guid: fdc70b64e0f70064a9f4f87ed99a6c47, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 4721188736064387450
-      m_GuidHigh: 611955769880342975
-    m_SerializedTextureGuid:
-      m_GuidLow: 10670237035797667766
-      m_GuidHigh: 14854898454958334283
-    m_Size: {x: 0.2, y: 0.125}
-    m_SpecifySize: 1
-    m_Name: RicinusCommunisLF
-    m_Texture: {fileID: 2800000, guid: fbefdfb64c0c94144b614aae703327ce, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 4852346253610712205
-      m_GuidHigh: 14399524014111057312
-    m_SerializedTextureGuid:
-      m_GuidLow: 1163286543657597700
-      m_GuidHigh: 8498952658107742713
-    m_Size: {x: 0.2, y: 0.13696498}
-    m_SpecifySize: 1
-    m_Name: StrawberryF
-    m_Texture: {fileID: 2800000, guid: b6b3fb04d2f21024f9b95fc56958f275, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 5470985344246237976
-      m_GuidHigh: 1232680889304869029
-    m_SerializedTextureGuid:
-      m_GuidLow: 11372783062769606251
-      m_GuidHigh: 16279274696342844074
-    m_Size: {x: 0.2, y: 0.12811388}
-    m_SpecifySize: 1
-    m_Name: SugarCaneF
-    m_Texture: {fileID: 2800000, guid: a3f61e6b3df09dd4aa3285c4159aebe1, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 5629775589342741980
-      m_GuidHigh: 7732813342072062640
-    m_SerializedTextureGuid:
-      m_GuidLow: 2460132571999731413
-      m_GuidHigh: 10811878952067961226
-    m_Size: {x: 0.2, y: 0.1298893}
-    m_SpecifySize: 1
-    m_Name: TeaTreeF
-    m_Texture: {fileID: 2800000, guid: 36697ed5258a22248a9188849f820b96, type: 3}
+    m_Name: Ponderosa Lemon
+    m_Texture: {fileID: 0}
