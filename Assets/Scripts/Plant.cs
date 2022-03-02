@@ -26,6 +26,8 @@ public class Plant : MonoBehaviour
     private string cont; // The contraindications of the plant
     [SerializeField]
     private string links; // A list of extra links associated with the plant
+    public static List<List<string>> matrix = new List<List<string>>(); //2D List
+
     #endregion //VARIABLES
 
     #region UNITY_MONOBEHAVIOUR_MEDTHODS
