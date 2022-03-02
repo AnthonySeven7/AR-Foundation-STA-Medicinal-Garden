@@ -14,7 +14,8 @@ public class PlantManager : MonoBehaviour
     #region VARIABLES
     [SerializeField]
     private GameObject buttonPrefab;
-    public static List<Plant> myPlants = new List<Plant>(); //create a list of plants equal to number of rows in Plant.matrix
+    public List<List<string>> matrix = new List<List<string>>(); //2D List
+    public List<Plant> myPlants = new List<Plant>(); //create a list of plants equal to number of rows in matrix
     [SerializeField]
     private GameObject informationPanel;
     [SerializeField]
@@ -25,12 +26,6 @@ public class PlantManager : MonoBehaviour
     private Molecule currentMole; // The molecule that is currently being tracked
     public DynamicMole dynMol; // A reference to the dynamic trackable molecule handler
     private List<GameObject> objToDelete = new List<GameObject>(); // A list of game objects to be deleted once the focus has changed
-    private static int colComName;
-    private static int colDescription;
-    private static int colFamily;
-    private static int colHardiness;
-    private static int colSciName;
-    private static int colToxicity;
 
     #endregion //VARIABLES
 
@@ -47,7 +42,7 @@ public class PlantManager : MonoBehaviour
         catch(Exception e){
             print("error");
         }
-        Plant.matrix = GetComponent<FileReader>().readFile();
+        matrix = GetComponent<FileReader>().readFile();
         createPlants();
     }
 
@@ -72,26 +67,26 @@ public class PlantManager : MonoBehaviour
         // Debug.Log(colHardiness);
         // Debug.Log(colSciName);
         // Debug.Log(colToxicity);
-        for (int i = 1; i < Plant.matrix.Count; i++)
+        for (int i = 1; i < matrix.Count; i++)
         {
-            Debug.Log("Creating Button: " + Plant.matrix[plantNum][colComName]);
+            Debug.Log("Creating Button: " + matrix[plantNum][colComName]);
             var button = Instantiate(buttonPrefab).GetComponent<Plant>();
-            button.setComName(Plant.matrix[plantNum][colComName]);
-            button.setDesc(Plant.matrix[plantNum][colDescription]);
-            button.setFamily(Plant.matrix[plantNum][colFamily]);
-            button.setHardiness(Plant.matrix[plantNum][colHardiness]);
-            button.setSciName(Plant.matrix[plantNum][colSciName]);
-            button.setToxicity(Plant.matrix[plantNum][colToxicity]);
-            button.setCont(Plant.matrix[plantNum][colCont]);
-            button.setLinks(Plant.matrix[plantNum][colLinks]);
+            button.setComName(matrix[plantNum][colComName]);
+            button.setDesc(matrix[plantNum][colDescription]);
+            button.setFamily(matrix[plantNum][colFamily]);
+            button.setHardiness(matrix[plantNum][colHardiness]);
+            button.setSciName(matrix[plantNum][colSciName]);
+            button.setToxicity(matrix[plantNum][colToxicity]);
+            button.setCont(matrix[plantNum][colCont]);
+            button.setLinks(matrix[plantNum][colLinks]);
             Molecule[] molecules = new Molecule[3];
             int index = 0;
             foreach (int j in colMoleName) {
                 Molecule m = new Molecule();
-                if (!string.IsNullOrEmpty(Plant.matrix[plantNum][j])) Debug.Log(string.Format("\t{0} {1} {2}",Plant.matrix[plantNum][j], Plant.matrix[plantNum][j+1], Plant.matrix[plantNum][j+2]));
-                m._name = Plant.matrix[plantNum][j];
-                m._class = Plant.matrix[plantNum][j+1]; // FIX THIS
-                m._description = Plant.matrix[plantNum][j+2];
+                if (!string.IsNullOrEmpty(matrix[plantNum][j])) Debug.Log(string.Format("\t{0} {1} {2}",matrix[plantNum][j], matrix[plantNum][j+1], matrix[plantNum][j+2]));
+                m._name = matrix[plantNum][j];
+                m._class = matrix[plantNum][j+1]; // FIX THIS
+                m._description = matrix[plantNum][j+2];
                 molecules[index] = m;
                 index++;
             }
@@ -110,61 +105,11 @@ public class PlantManager : MonoBehaviour
     */
     int getColumnNum(string str)
     {
-        for (int column = 0; column < Plant.matrix[0].Count; column++)
+        for (int column = 0; column < matrix[0].Count; column++)
         {
-            if (Plant.matrix[0][column].ToLower().Contains(str)) return column;
+            if (matrix[0][column].ToLower().Contains(str)) return column;
         }
-        return Plant.matrix[0].FindIndex(x => x.StartsWith(str));
-    }
-    /*
-    //setters
-    void setColDescription(int colDescription)
-    {
-        PlantManager.colDescription = colDescription;
-    }
-    void setColFamily(int colFamily)
-    {
-        PlantManager.colFamily = colFamily;
-    }
-    void setColHardiness(int colHardiness)
-    {
-        PlantManager.colHardiness = colHardiness;
-    }
-    void setColSciName(int colSciName)
-    {
-        PlantManager.colSciName = colSciName;
-    }
-    void setColToxicity(int colToxicity)
-    {
-        PlantManager.colToxicity = colToxicity;
-    }
-    */
-
-
-    //getters
-    public static int getColComName()
-    {
-        return colComName;
-    }
-    public static int getColDescription()
-    {
-        return colDescription;
-    }
-    public static int getColFamily()
-    {
-        return colFamily;
-    }
-    public static int getColHardiness()
-    {
-        return colHardiness;
-    }
-    public static int getColSciName()
-    {
-        return colSciName;
-    }
-    public static int getColToxicity()
-    {
-        return colToxicity;
+        return matrix[0].FindIndex(x => x.StartsWith(str));
     }
 
     public void onFocusSwitch(Plant focus)
