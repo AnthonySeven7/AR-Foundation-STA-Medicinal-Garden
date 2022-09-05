@@ -32,6 +32,7 @@ public class PlantManager : MonoBehaviour
     private static int colSciName;
     private static int colToxicity;
 
+
     #endregion //VARIABLES
 
     #region UNITY_MONOBEHAVIOUR_METHODS
@@ -47,6 +48,7 @@ public class PlantManager : MonoBehaviour
         catch(Exception e){
             print("error");
         }
+        Debug.Log("Hello");
         Plant.matrix = GetComponent<FileReader>().readFile();
         createPlants();
     }
@@ -96,8 +98,10 @@ public class PlantManager : MonoBehaviour
                 index++;
             }
             button.setMolecules(molecules);
-            button.transform.SetParent(GameObject.Find("MainPanel").transform.GetChild(2).GetChild(0).GetChild(0));
+            button.transform.SetParent(GameObject.Find("MainPanel").transform.GetChild(4).GetChild(0).GetChild(0));
             button.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+            //button.transform.position = new Vector3(-100.0f, -100.0f, -100.0f);
             button.gameObject.name = string.Format("{0}_button", button.getComName().Replace(" ", ""));
             myPlants.Add(button);
             plantNum++;

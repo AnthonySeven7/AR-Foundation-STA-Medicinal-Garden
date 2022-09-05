@@ -15,8 +15,8 @@ public class BackButton : MonoBehaviour
         MainPanel.gameObject.SetActive(true);
         ARCamera.gameObject.SetActive(false);
         PlantManager.closeAR();
-        if (GameObject.Find("DynamicTrackable")) {
-        GameObject.Destroy(GameObject.Find("DynamicTrackable"));
+        if (GameObject.Find("DynamicTrackable(Clone)")) {
+        GameObject.Destroy(GameObject.Find("DynamicTrackable(Clone)"));
         }
     }
 }

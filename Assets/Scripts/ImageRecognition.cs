@@ -12,6 +12,7 @@ public class ImageRecognition : MonoBehaviour
     private GameObject[] placeablePrefabs;
     private Dictionary<string, GameObject> spawnedPrefabs = new Dictionary<string, GameObject>();
     private ARTrackedImageManager trackedImageManager;
+    private static string trackedName;
 
     private void Awake()
     {
@@ -56,7 +57,10 @@ public class ImageRecognition : MonoBehaviour
     private void UpdateImage(ARTrackedImage trackedImage)
     {
         //Match prefab image positions and visibility
-        string trackedName = trackedImage.referenceImage.name;
+        trackedName = trackedImage.referenceImage.name;     //*************************************image name
+
+        //findIndex(trackedName);
+
         string plantName = GameObject.Find("PlantManager").GetComponent<PlantManager>().getPlant().name;
         //Vector3 position = trackedImage.transform.position;
 
@@ -64,6 +68,7 @@ public class ImageRecognition : MonoBehaviour
         //prefab.transform.position = position;
         //prefab.SetActive(true);
         GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = plantName.ToLower().Substring(0,plantName.Length-7) + "|" + trackedName.ToLower();
+        GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += trackedName;
         if (plantName.ToLower().Substring(0,plantName.Length-7) != trackedName.ToLower()) {
             //GameObject.Find("DEBUGPANEL").transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text += "\nfalse";
             GameObject.Find("PlantManager").GetComponent<PlantManager>().dynMol.gameObject.SetActive(false);
@@ -80,4 +85,16 @@ public class ImageRecognition : MonoBehaviour
         //     }
         // }
     }
+
+
+    public static string getTrackedName()
+    {
+        return trackedName;
+    }
+    /*
+    private void findIndex(string name)
+    {
+
+    }
+    */
 }

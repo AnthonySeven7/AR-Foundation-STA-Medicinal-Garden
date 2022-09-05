@@ -33,6 +33,7 @@ public class Plant : MonoBehaviour
     #region UNITY_MONOBEHAVIOUR_MEDTHODS
     void Start() {
         transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = string.Format("<b>{0}</b>\n<i>{1}</i>\n{2}\n{3}", comName, sciName, family, description); // Set the text displayed on the button
+        transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().margin = new Vector4(10.0f,0.0f,-127.0f,0.0f);
         gameObject.name = string.Format("{0}_button",comName.Replace(" ", "")); // Set the name of the game object
         Debug.Log(sciName.Replace(" ","").Replace(".",""));
         if (Resources.Load<Sprite>("Button_Images/"+sciName.Replace(" ", "").Replace(".", "")))

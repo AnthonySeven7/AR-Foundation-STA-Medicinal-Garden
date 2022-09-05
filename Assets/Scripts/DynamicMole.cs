@@ -46,7 +46,7 @@ public class DynamicMole : MonoBehaviour
                 else Debug.Log(string.Format("<color=green>{0}</color>", mole._name));
             }
             if (moleModel != null) {
-                GameObject trackedMole = Instantiate(moleModel);
+                GameObject trackedMole = Instantiate(moleModel, new Vector3(0.0f, 1.0f, -8.5f), transform.rotation);
                 trackedMole.transform.SetParent(gameObject.transform);
             }
         }

@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 204988980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 7443133165936784159}
   m_RootOrder: 1
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 238, y: 114.9}
-  m_Spacing: {x: 0, y: 0}
+  m_CellSize: {x: 180, y: 150}
+  m_Spacing: {x: 115, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!1001 &3211389609776743384
@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 5465813005030174919, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 476.6107
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 5465813005030174919, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
@@ -187,22 +187,22 @@ PrefabInstance:
     - target: {fileID: 5465813005030174919, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5465813005030174919, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5465813005030174919, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5465813005030174919, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5465813005030174919, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
@@ -252,17 +252,17 @@ PrefabInstance:
     - target: {fileID: 5465813006107025031, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 46
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 5465813006107025031, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5465813006107025031, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5465813006107025031, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
@@ -283,6 +283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_margin.z
       value: -127.184845
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465813006107025031, guid: 2477369605c90544195a29c4f282aebc,
+        type: 3}
+      propertyPath: m_text
+      value: " <b>Common Name</b>\n <i>Scientific Name</i>\n  Family\n Description"
       objectReference: {fileID: 0}
     - target: {fileID: 8777575512537053933, guid: 2477369605c90544195a29c4f282aebc,
         type: 3}
